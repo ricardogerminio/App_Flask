@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+
+<h2 class="text-center">Atualização de Livro</h2>
+<hr>
+<form action="{{url_for('atualiza_livro', id=livro.id)}}" class="form-group" method="POST">
+    <label for="nome">Nome</label>
+    <input type="text" class="form-control" name="nome" id="nome" placeholder="Nome do Livro..." value="{{livro.nome}}" required>
+    <label for="descricao">Descrição</label>
+    <input type="text" class="form-control" name="descricao" id="descricao" placeholder="Descrição do Livro..." value="{{livro.descricao}}" required>
+    <label for="valor">Valor</label>
+    <input type="number" class="form-control" name="valor" id="valor" placeholder="Valor do Livro..." value="{{livro.valor}}" required>
+    <button class="btn btn-success">Atualizar</button>
+</form>
+
+{% endblock conteudo %}
